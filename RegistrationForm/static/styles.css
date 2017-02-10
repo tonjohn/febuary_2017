@@ -1,0 +1,57 @@
+body {
+	padding: 10px;
+}
+
+.container {
+	width: 80%
+}
+
+form, #results {
+	border: 1px solid black;
+	box-shadow: 10px 10px 5px #888888;
+	padding: 10px;
+	position: relative;
+	width: 500px;
+}
+
+input, select {
+	position: absolute;
+	left: 150px;
+}
+
+#submit {
+	height: 10px;
+}
+
+input[type="submit"] {
+	left: auto;
+	right: 80px;
+}
+
+textarea {
+	display: block;
+	height: 80px;
+	width: 85%;
+}
+
+form > div {
+	margin-bottom: 20px;
+}
+
+.flash {
+	padding: 10px;
+	margin-bottom: 30px;
+	display: inline-block;
+}
+
+.flash.err {
+	background-color: tomato;
+}
+
+.flash.suc {
+	background-color: green;
+}
+
+label > span {
+	text-decoration: line-through;
+}

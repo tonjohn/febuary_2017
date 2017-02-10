@@ -1,0 +1,64 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Registration Form</title>
+	<meta name="description" content="Registration Form Flask Assignment">
+	<link rel="icon"
+		  type="image/png"
+		  href="http://tonjohn.com/favicon.png">
+	<!-- linking a css style sheet -->
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+		{% with messages = get_flashed_messages(category_filter=["error"]) %}
+			{% if messages %}
+				<div class="flash err">
+					<h2>Please fix the following error(s):</h2>
+					<ul>
+					{% for message in messages %}
+						<li>{{message}}</li>
+					{% endfor %}
+					</ul>
+				</div>
+			{% endif %}
+		{% endwith %}
+		{% with messages = get_flashed_messages(category_filter=["success"]) %}
+			{% if messages %}
+				<div id="flash suc">
+					{% for message in messages %}
+						<h2>{{message}}</h2>
+					{% endfor %}
+				</div>
+			{% endif %}
+		{% endwith %}
+	<form action='/submit' method='post'>
+		<div>
+			<label for="email">Email:</label>
+			<input id="email" type='email' name='email' placeholder="contact@codingdojo.com" value="{{session['email']}}">
+		</div>
+		<div>
+			<label for="first_name">First Name:</label>
+			<input id="first_name" type='text' name='first_name' placeholder="Bob" value="{{session['first_name']}}">
+		</div>
+		<div>
+			<label for="last_name">Last Name:</label>
+			<input id="last_name" type='text' name='last_name' placeholder="Johnson" value="{{session['last_name']}}">
+		</div>
+		<div>
+			<label for="password">Password:</label>
+			<input id="password" type='password' name='password'>
+		</div>
+		<div>
+			<label for="confirm_password">Confirm Password:</label>
+			<input id="confirm_password" type='password' name='confirm_password'>
+		</div>
+		<div>
+			<label for="dob">Date of Birth:</label>
+			<input id="dob" type="date" name="dob">
+		</div>
+		<div id="submit">
+			<input type="submit" value="Submit">
+		</div>
+	</form>
+</body>
+</html>
