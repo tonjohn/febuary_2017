@@ -1,0 +1,18 @@
+<head>
+	<meta charset="UTF-8">
+	<title>Dojo Survey</title>
+	<meta name="description" content="Dojo Survey Flask Assignment">
+	<link rel="icon"
+		  type="image/png"
+		  href="http://tonjohn.com/favicon.png">
+	<!-- linking a css style sheet -->
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+	<div id="results">
+		<h3>Submitted Info</h3>
+		<p>Name: {{ session['first_name'] }} {{ session['last_name'] }}</p>
+		<p>Email: {{ session['email'] }}</p>
+		<a href="/reset">Go Back</a>
+	</div>
+</body>

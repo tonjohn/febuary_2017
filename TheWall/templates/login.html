@@ -1,0 +1,66 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>The Wall - Login</title>
+	<meta name="description" content="Jon wanted nothing more. No, he had to tell himself, those days are gone. The realization twisted in his belly like a knife. They had chosen him to rule. The Wall was his, and their lives were his as well. A lord may love the men that he commands, he could hear his lord father saying, but he cannot be a friend to them. One day he may need to sit in judgement on them, or send them forth to die.">
+	<link rel="icon"
+		  type="image/png"
+		  href="http://tonjohn.com/favicon.png">
+	<!-- linking a css style sheet -->
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+	<div class="container">
+			{% with messages = get_flashed_messages(category_filter=["error"]) %}
+				{% if messages %}
+					<div class="flash err">
+						<h2>Please fix the following error(s):</h2>
+						<ul>
+						{% for message in messages %}
+							<li>{{message}}</li>
+						{% endfor %}
+						</ul>
+					</div>
+				{% endif %}
+			{% endwith %}
+			{% with messages = get_flashed_messages(category_filter=["success"]) %}
+				{% if messages %}
+					<div id="flash suc">
+						{% for message in messages %}
+							<h2>{{message}}</h2>
+						{% endfor %}
+					</div>
+				{% endif %}
+			{% endwith %}
+		<form id="login" action='/login' method='post'>
+			<div>
+				<label for="email">Email:</label>
+				<input id="email" type='email' name='email' placeholder="contact@codingdojo.com" value="{{session['email']}}">
+			</div>
+			<div>
+				<label for="password">Password:</label>
+				<input id="password" type='password' name='password'>
+			</div>
+			<div id="submit">
+				<input name='action' type="submit" value="Login">
+			</div>
+			<h3>(Registration Only)</h3>
+			<div>
+				<label for="confirm_password">Confirm Password:</label>
+				<input id="confirm_password" type='password' name='confirm_password'>
+			</div>
+			<div>
+				<label for="first_name">First Name:</label>
+				<input id="first_name" type='text' name='first_name' placeholder="Bob" value="{{session['first_name']}}">
+			</div>
+			<div>
+				<label for="last_name">Last Name:</label>
+				<input id="last_name" type='text' name='last_name' placeholder="Johnson" value="{{session['last_name']}}">
+			</div>
+			<div id="submit">
+				<input name='action' type="submit" value="Register">
+			</div>
+		</form>
+	</div>
+</body>
+</html>

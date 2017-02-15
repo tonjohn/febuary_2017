@@ -1,0 +1,143 @@
+* {
+	font-family: sans-serif;
+	font-weight: 100;
+}
+body {
+	padding: 10px;
+}
+
+.container {
+	width: 80%;
+	margin: auto;	
+}
+
+form {
+	position: relative;
+}
+
+form.comment h2 {
+	font-size: .9em;
+	margin-bottom: 3px;
+}
+
+.comment input[type='text'] {
+	width: 80%;
+	height: 50px;
+	padding-left: 10px;
+	margin-bottom: 10px;
+	font-size: 1em;
+}
+
+.comment input[type="submit"] {
+	display: block;
+	background-color: #2b78e4;
+	border: none;
+	box-shadow: 2px 2px 2px black;
+	color: white;
+	position: absolute;
+	right: 153px;
+	padding: 5px;
+}
+
+input[type="submit"].comment.green {
+	background-color: #009e0f;
+}
+
+.message a {
+	text-decoration: none;
+	color: black;
+}
+
+.message a:hover {
+	text-decoration: underline;
+}
+
+#header {
+	border-bottom: 1px solid black;
+	margin-bottom: 20px;
+}
+
+#header h1, #usercp, #usercp h3 {
+	display: inline-block;
+}
+
+#header h1 {
+	width: 75%;
+}
+
+#header h1 > a {
+	text-decoration: none;
+	color: black;
+}
+
+#header h1:hover {
+	transform: scale(1, 1.2)
+}
+
+#login form, #results {
+	border: 1px solid black;
+	box-shadow: 10px 10px 5px #888888;
+	padding: 10px;
+	position: relative;
+	width: 500px;
+}
+
+#login input, #login select {
+	position: absolute;
+	left: 150px;
+}
+
+#submit {
+	height: 10px;
+}
+
+input[type="submit"] {
+	left: auto;
+	right: 80px;
+}
+
+textarea {
+	display: block;
+	height: 80px;
+	width: 85%;
+}
+
+form > div {
+	margin-bottom: 20px;
+}
+
+.flash {
+	padding: 10px;
+	margin-bottom: 30px;
+	display: inline-block;
+}
+
+.flash.err {
+	background-color: tomato;
+}
+
+.flash.suc {
+	background-color: green;
+}
+
+label > span {
+	text-decoration: line-through;
+}
+
+.user_comments {
+	margin-left: 15px;
+}
+
+.user_comment h2 {
+	font-size: 1.2em;
+}
+
+article.user_comment {
+	padding-left: 5px;
+	border-left: 1px solid lightgrey;
+}
+
+#login {
+	box-shadow: 5px 10px 20px black;
+	padding: 15px;
+}
